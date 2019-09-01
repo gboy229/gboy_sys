@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => env('TIMEZONE','UTC'),
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh_cn',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'zh_cn',
 
     /*
     |--------------------------------------------------------------------------
@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //模块化
+        Nwidart\Modules\LaravelModulesServiceProvider::class,
+
+        //验证码
+        Mews\Captcha\CaptchaServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +231,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        //模块化
+        'Module' => Nwidart\Modules\Facades\Module::class,
+
+        //验证码
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
 
     ],
 

@@ -46,6 +46,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'admin'=>[
+            'driver' => 'session',//session中存储
+            'provider' => 'admins',//对应下面的提供者
+        ],
     ],
 
     /*
@@ -69,6 +73,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Modules\Admin\Entities\Admin::class,    //模型的位置
         ],
 
         // 'users' => [
@@ -99,5 +107,8 @@ return [
             'expire' => 60,
         ],
     ],
+
+
+
 
 ];
